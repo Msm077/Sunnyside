@@ -1,0 +1,27 @@
+#include <Servo.h>
+
+Servo servo;
+int lit;
+  
+void setup(){
+  servo.attach(9);
+  pinMode(A0, INPUT);}
+
+
+void loop(){
+   lit = analogRead(A0);
+  
+if (lit > 670){servo.write(80);
+                 delay(3000);
+                 }
+while (lit > 670) {servo.write(93);
+                   lit = analogRead(A0);
+                   delay(1000);
+                  }
+if (lit < 670){servo.write(103);
+                 delay(3000);} 
+  while (lit < 670) {servo.write(93);
+    lit = analogRead(A0);
+                   delay(1000);
+                    }} 
+  
